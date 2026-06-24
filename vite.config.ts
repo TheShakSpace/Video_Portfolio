@@ -3,6 +3,7 @@ import react from '@vitejs/plugin-react';
 import path from 'path';
 import {defineConfig} from 'vite';
 
+// Commit tweak: ensure GitHub registers a second commit with no functional changes.
 export default defineConfig(() => {
   return {
     plugins: [react(), tailwindcss()],
