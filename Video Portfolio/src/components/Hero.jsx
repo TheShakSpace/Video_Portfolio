@@ -2,12 +2,12 @@ import React, { useRef, useEffect, useState } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 // Adjusted import path for the video
-import heroVideo from '../assets/hero video/Developer_introduces_self_and_sk…_202606051918.mp4';
+import heroVideo from '../assets/hero video/Developer_self-introduction_video_202606242124.mp4';
 
 const Hero = () => {
   const videoRef = useRef(null);
   const [isPlaying, setIsPlaying] = useState(false);
-  const [isMuted, setIsMuted] = useState(false);
+  const isMuted = false;
 
   useEffect(() => {
     AOS.init({
@@ -29,6 +29,12 @@ const Hero = () => {
         setIsPlaying(false);
       }
     }
+  };
+
+  const scrollToId = (id) => {
+    const el = document.getElementById(id);
+    if (!el) return;
+    el.scrollIntoView({ behavior: 'smooth' });
   };
 
   return (
@@ -74,14 +80,35 @@ const Hero = () => {
             className="flex flex-row flex-wrap items-center gap-3 w-full"
           >
             {/* Primary Button */}
-            <button className="px-4 py-2 md:px-6 md:py-2 text-xs md:text-base rounded-full bg-white text-black font-semibold hover:bg-gray-200 transition-all duration-300 transform hover:scale-105 shadow-md">
+            <button
+              onClick={() => scrollToId('projects')}
+              className="px-4 py-2 md:px-6 md:py-2 text-xs md:text-base rounded-full bg-white text-black font-semibold hover:bg-gray-200 transition-all duration-300 transform hover:scale-105 shadow-md"
+            >
               View My Work
             </button>
             
             {/* Secondary Button - Glassmorphism style */}
-            <button className="px-4 py-2 md:px-6 md:py-2 text-xs md:text-base rounded-full bg-black/40 border border-white text-white font-semibold hover:bg-black/60 transition-all duration-300 backdrop-blur-md">
+            <button
+              onClick={() => scrollToId('contact')}
+              className="px-4 py-2 md:px-6 md:py-2 text-xs md:text-base rounded-full bg-black/40 border border-white text-white font-semibold hover:bg-black/60 transition-all duration-300 backdrop-blur-md"
+            >
               Contact Me
             </button>
+
+            {/* LinkedIn Icon */}
+            <a
+              href="https://www.linkedin.com/in/theshakspace/"
+              target="_blank"
+              rel="noopener noreferrer"
+              data-aos="fade-up"
+              data-aos-delay="520"
+              className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-black/40 border border-white/20 hover:bg-black/60 transition-all duration-300 backdrop-blur-md"
+              aria-label="LinkedIn"
+            >
+              <svg className="w-5 h-5 text-white" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M4.98 3.5C4.98 4.88 3.86 6 2.5 6C1.14 6 0 4.88 0 3.5C0 2.12 1.12 1 2.48 1C3.84 1 4.98 2.12 4.98 3.5ZM.5 8H4.5V24H.5V8ZM8 8H11.85V10.01H11.9C12.45 8.98 13.75 8 15.5 8C19.1 8 20 10.37 20 13.36V24H16V14.3C16 12.98 15.97 11.31 14.04 11.31C12.09 11.31 11.5 12.73 11.5 14.13V24H7.5V8H8Z" />
+              </svg>
+            </a>
           </div>
         </div>
 

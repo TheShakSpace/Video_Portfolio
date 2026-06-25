@@ -32,8 +32,19 @@ const Contact = () => {
           data-aos="fade-up"
           className="bg-[#ff2a2a] w-full md:w-[85%] lg:w-[75%] p-8 md:p-16 text-white flex flex-col justify-between"
         >
-          <div className="text-xs font-bold tracking-[0.2em] mb-12 md:mb-20 uppercase opacity-90">
-            Reach Us
+          <div className="flex items-center justify-between gap-4">
+            <div className="text-xs font-bold tracking-[0.2em] mb-12 md:mb-20 uppercase opacity-90">
+              Reach Us
+            </div>
+            <a
+              href="https://www.linkedin.com/in/theshakspace/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-6 py-2.5 rounded-full bg-black/20 border border-white/20 text-white font-bold hover:bg-black/30 transition-all duration-300 backdrop-blur-md whitespace-nowrap"
+              aria-label="LinkedIn"
+            >
+              LinkedIn
+            </a>
           </div>
 
           <form className="flex flex-col gap-12 md:gap-16 w-full">
